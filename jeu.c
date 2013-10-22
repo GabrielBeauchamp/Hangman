@@ -21,10 +21,12 @@ int comparerCaractere(int entre, int mot[], int motDeviner[],
     int j, k;
 
     for (i = 0; i < 13; i++) {
-	if (entre == mot[i]) {	/* Si le caractere entré est égual a un caractere du tableau */
+	/* Si le caractere entré est égual a un caractere du tableau */
+	if (entre == mot[i]) {
 	    tmpi = i;
 	    tmpc = entre;
-	    printf("Position dans le mot %d Valeur ASCII %d \n", tmpi, tmpc);	/* on affiche pour les tests */
+	    /* on affiche pour les tests */
+	    printf("Position dans le mot %d Valeur ASCII %d \n", tmpi, tmpc);
 	    motDeviner[tmpi] = entre;
 	}
     }

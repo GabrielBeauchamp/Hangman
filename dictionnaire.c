@@ -15,8 +15,10 @@ int compterMot(FILE * fichier)
 	}
     }
 
-    rewind(fichier);		/* S'assure que le "curseur" soit placé en début de fichier. */
-    return nombreMot;		/* Si on peut éviter les pointeurs... */
+    /* S'assure que le "curseur" soit placé en début de fichier. */
+    rewind(fichier);
+    /* Si on peut éviter les pointeurs... */
+    return nombreMot;
 }
 
 int lireMot(FILE * fichier, int motALire, int mot[])
@@ -31,7 +33,8 @@ int lireMot(FILE * fichier, int motALire, int mot[])
 	}
     } while (i != motALire);
 
-    /* Ceci fonctionne sauf pour la premiere position... Il manque un caractere... */
+    /* Ceci fonctionne sauf pour la premiere position...
+       Il manque un caractere... */
     if (motALire == 0) {
 	rewind(fichier);
     }
@@ -45,16 +48,17 @@ int lireMot(FILE * fichier, int motALire, int mot[])
 	    break;
 	}
     }
-    longeur--;			/* Je sais pas pourquoi mais il compte un caractere de trop... */
+    /* Je sais pas pourquoi mais il compte un caractere de trop... */
+    longeur--;
     return longeur;
 }
 
 /* Finalement pas utilisé, alors, pour une raison obscure il est important que je la gare... */
 /* D'ailleurs, elle fonctionne probablement pas... */
-int longeurMot(int mot[])
-{
-    int i = 0;
-    for (i = 0; mot[i] != '\n'; i++) {
-    }
-    return i;
-}
+/* int longeurMot(int mot[]) */
+/* { */
+/*     int i = 0; */
+/*     for (i = 0; mot[i] != '\n'; i++) { */
+/*     } */
+/*     return i; */
+/* } */

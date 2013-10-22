@@ -29,14 +29,10 @@ int main(int argc, char *argv[])
     positionMot = nombreAleatoire(nombreMot);
 
     /* Longeur du mot en caractere. */
-    longeurMot = lireMot(fichierMot, positionMot, mot);	/* On sort la longeur du mot en même temps */
-    printf("Ceci est la longeur en caractere du mot %d\n", longeurMot);	/* On affiche ensuite la longeur du sus-choisi mot */
-
-
-    //    int i;			/* "fonction" test pour savoir le mot */
-    //for (i = 0; i < longeurMot; i++) {
-    //	printf("%c", mot[i]);
-    //}
+    /* On sort la longeur du mot en même temps */
+    longeurMot = lireMot(fichierMot, positionMot, mot);
+    /* On affiche ensuite la longeur du sus-choisi mot */
+    printf("Ceci est la longeur en caractere du mot %d\n", longeurMot);
 
     /* Initialisation du tableau */
     for (i = 0; i <= longeurMot; i++) {
@@ -53,8 +49,8 @@ int main(int argc, char *argv[])
 	    printf("%c", motDeviner[j]);
 	}
 
-	/* Et on fait un retour de chariot */
-	printf("\n> ");		/* Au moins, personne ne peut dire que le programme à planté... */
+	/* On affiche le prompt. */
+	printf("\n> ");
 	entre = lireCaractere();
 
 	positionCaractere =
@@ -67,12 +63,15 @@ int main(int argc, char *argv[])
 		 essaiRestant);
 	}
 
-	/* Donc on compare les deux tableau de "mot" et on incrémente k a chaque caractere valide */
+	/* Donc on compare les deux tableau de "mot" et
+	   on incrémente k a chaque caractere valide */
 	for (j = 0; j < longeurMot; j++) {
 	    if (mot[j] == motDeviner[j])
 		k++;
 	}
-	/* Si k est égual à longeurMot cela veux dire que les deux chaines sont identiques. Donc, victoire! */
+	/* Si k est égual à longeurMot cela veux dire
+	   que les deux chaines sont identiques.
+	   Donc, victoire! */
 	if (k == longeurMot) {
 	    printf("Vous avez gagner! En %d coups!\n", nombreEssai);
 	    fclose(fichierMot);
